@@ -51,7 +51,7 @@ public class ButtonPanel extends JPanel implements ActionListener{
 		}
 		setSize(552, 552);
 		
-//		update();
+
 	}
 	
 	public void actionPerformed(ActionEvent e){
