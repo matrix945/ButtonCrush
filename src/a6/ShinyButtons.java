@@ -18,12 +18,15 @@ public class ShinyButtons {
 	private byte[][] buttonTable;
 	
 	public ShinyButtons() {	
+		System.out.println("this is shinybuttons cons");
+		selectionTable = new boolean [ROWS][ROWS];
 		buttonTable = new byte[ROWS][ROWS];
 		resetButtons();
 		processTable();
 	}
 	
 	public void resetButtons() {
+		System.out.println("this is  resetButtons function");
 		score = 0;
 		for (int r=0; r<ROWS; r++)
 			for (int c=0; c<ROWS; c++)
@@ -33,8 +36,10 @@ public class ShinyButtons {
 	public byte getButton(int r, int c) { return buttonTable[r][c]; }
 	public int getScore() {return score;}
 	public boolean getSelectionTable(int r, int c) {return selectionTable[r][c];};
+	public void setSelectionTable(int r, int c,boolean set) {selectionTable[r][c] = set;};
 	
 	public void swap(int row, int col, int r, int c){
+		System.out.println("this is  swap function");
 	    byte temp = buttonTable[row][col];
 	    buttonTable[row][col] = buttonTable[r][c];
 	    buttonTable[r][c] = temp;
@@ -42,8 +47,7 @@ public class ShinyButtons {
 	}
 	
 	public void processTable(){
-		selectionTable = new boolean [ROWS][ROWS];
-
+		System.out.println("this is  processtable function");
 		 for (int i = 0; i < 8; i++){
 		      int matches = 0;
 		      for (int c = 1; c < 8; c++){        
@@ -85,6 +89,7 @@ public class ShinyButtons {
 	
 	
 	public void cleanTable(){
+		System.out.println("this is  cleantable function");
 		boolean newPieceAdded = false;
 		int r = 7;
 		while (r >= 0) {

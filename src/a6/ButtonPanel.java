@@ -83,6 +83,8 @@ public class ButtonPanel extends JPanel implements ActionListener{
 				          System.out.println(row);
 				          System.out.println(col);
 						buttons[row][col].setSelected(true);
+//						bu.setSelectionTable(row, col, true);
+//						System.out.println("the 00 function!" + bu.getSelectionTable(0, 0));
 //						System.out.println(buttons[row][col].isSelected());
 						buttons[row][col].setSelectedIcon(selectedIcons[bu.getButton(row, col)]);
 
@@ -93,16 +95,21 @@ public class ButtonPanel extends JPanel implements ActionListener{
 	}
 	
 	public void update() {
-		System.out.println("we didd");
+		System.out.println("this is update function");
+		System.out.println("the 00 is " + buttons[0][0].isSelected());
+		System.out.println("the 00 function" + bu.getSelectionTable(0, 0));
 		for(int row=0; row<8; row++) {
 			for (int col=0; col<8; col++) {
 				if (bu.getSelectionTable(row, col)){
+					System.out.println(row + "  " + col  + "  ");
+			        System.out.println("set true");	         
 					buttons[row][col].setSelected(true);
 					buttons[row][col].setSelectedIcon(selectedIcons[bu.getButton(row, col)]);
 				}
-				else
+				else{
 					buttons[row][col].setSelected(false);
 				buttons[row][col].setIcon(icons[bu.getButton(row, col)]);
+				}
 			}
 		}
 	}

@@ -43,7 +43,9 @@ public class ShinyButtonsApp extends JFrame implements ActionListener{
 		qButton.addActionListener(this);
 		
 		timer = new Timer(500,new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
+				System.out.println("this is  event function");
 			// Write code here to clean the table, process it, and then update
 				view.bu.cleanTable();
 				view.bu.processTable();
